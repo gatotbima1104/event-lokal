@@ -1,6 +1,29 @@
 import React from "react";
+import ReactGA from 'react-ga';
 
 const Section1 = () => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+     // Replace '1234567890' with the phone number you want to contact
+     const phoneNumber = '+6285156086291';
+
+     // Replace 'Check out our upcoming event!' with your pre-defined message
+     const message = 'Kami tertarik untuk mempromosikan event kami di Event Lokal website anda';
+
+     // Create the WhatsApp link with the 'https://wa.me/' format and message parameter
+     const whatsappLink = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+
+     // Open the link in a new tab/window
+     window.open(whatsappLink, '_blank')
+
+     ReactGA.event({
+      category: 'Button',
+      action: 'Click',
+      label: 'Cari Events',
+    });
+  };
+
   return (
     <div
       id="banner"
@@ -27,7 +50,7 @@ const Section1 = () => {
             </div>
           </div>
           <div className="col-md-3 mt-3">
-            <button className="cari">Cari Events</button>
+            <button className="cari" type="submit" onClick={handleSubmit}>Cari Events</button>
           </div>
           <div className="row my-5 border"></div>
         </div>
