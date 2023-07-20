@@ -1,5 +1,6 @@
 import React from "react";
 import ReactGA from "react-ga";
+import Helmet  from 'react-helmet';
 
 const Section1 = () => {
   const handleSubmit = (e) => {
@@ -31,6 +32,14 @@ const Section1 = () => {
       id="banner"
       className="d-flex justify-content-center align-items-center"
     >
+      <Helmet>
+        <title>Event Lokal - Promosikan Event mu disini</title>
+        <meta
+          name="description"
+          content="Read about my awesome blog post and learn something new today!"
+        />
+      </Helmet>
+      
       <div className="container">
         <div className="row">
           <div className="col-md-12">
