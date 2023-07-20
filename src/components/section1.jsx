@@ -1,9 +1,18 @@
 import React from "react";
 import ReactGA from 'react-ga';
 
+ReactGA.initialize('G-2R9R6C3KGR');
+
 const Section1 = () => {
 
   const handleSubmit = (e) => {
+
+    ReactGA.event({
+      category: 'Button',
+      action: 'Click',
+      label: 'Cari Events',
+    });
+    
     e.preventDefault();
      // Replace '1234567890' with the phone number you want to contact
      const phoneNumber = '+6285156086291';
@@ -16,12 +25,8 @@ const Section1 = () => {
 
      // Open the link in a new tab/window
      window.open(whatsappLink, '_blank')
+     
 
-     ReactGA.event({
-      category: 'Button',
-      action: 'Click',
-      label: 'Cari Events',
-    });
   };
 
   return (
